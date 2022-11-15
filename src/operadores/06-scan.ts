@@ -13,13 +13,17 @@ const totalAcumulador = (acc, cur) => acc + cur;
 from( numeros ).pipe(
     reduce( totalAcumulador, 0 )
 )
-.subscribe( console.log );
+    .subscribe(resp=>{
+        console.log('totalAcumulador-reduce: ', resp)
+    } );
 
 // Scan
 from( numeros ).pipe(
     scan( totalAcumulador, 0 )
 )
-.subscribe( console.log );
+    .subscribe( resp=>{
+        console.log('totalAcumulador - scan: ', resp)
+    } );
 
 // Redux
 interface Usuario {
@@ -45,6 +49,8 @@ const id$ = state$.pipe(
     map( state => state.id )
 );
 
-id$.subscribe( console.log );
+id$.subscribe( resp=>{
+    console.log('redux', resp)
+} );
 
 

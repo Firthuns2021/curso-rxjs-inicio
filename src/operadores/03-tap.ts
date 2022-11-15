@@ -17,7 +17,7 @@ numeros$.pipe(
         complete: () => console.log('Se terminó todo')
     })
 )
-.subscribe( val => console.log('subs', val ));
+    .subscribe( val => console.log('subs', val ));
 
 
 

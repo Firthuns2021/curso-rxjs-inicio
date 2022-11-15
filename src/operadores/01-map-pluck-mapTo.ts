@@ -6,6 +6,7 @@ import { map, pluck, mapTo } from 'rxjs/operators';
 // )
 // .subscribe( console.log );
 
+// el signo dolar es para indicar que se trata de un observable
 const keyup$ = fromEvent<KeyboardEvent>( document, 'keyup' );
 
 const keyupCode$ = keyup$.pipe(

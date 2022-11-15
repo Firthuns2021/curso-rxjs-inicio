@@ -1,6 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
+// https://rxjs-dev.firebaseapp.com/api/operators/mapTo
 
 const texto = document.createElement('div');
 texto.innerHTML = `
@@ -24,7 +25,7 @@ body.append(progressBar);
 
 // funcion que haga el calculo
 const calcularProcentajeScroll = ( event ) => {
-    
+
     const {
         scrollTop,
         scrollHeight,

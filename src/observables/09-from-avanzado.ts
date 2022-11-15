@@ -1,3 +1,5 @@
+
+
 import { of, from } from 'rxjs';
 
 /**
@@ -35,14 +37,14 @@ from( miIterable ).subscribe( observer );
 
 const source$ = from(  fetch('https://api.github.com/users/klerith') );
 
-// source$.subscribe( async(resp) => {
+source$.subscribe( async(resp) => {
 
-//     console.log( resp );
+    console.log( resp );
 
-//     const dataResp = await resp.json();
-//     console.log(dataResp);
+    const dataResp = await resp.json();
+    console.log(dataResp);
 
-// });
+});
 
 
 // source$.subscribe( observer );
