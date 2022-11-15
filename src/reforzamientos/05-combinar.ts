@@ -1,4 +1,4 @@
-import { interval, timer } from 'rxjs';
+import {combineLatest, interval, timer} from 'rxjs';
 import { map, take } from 'rxjs/operators';
 /**
  * Ejercicio: Combinar ambos observables (letras$, numeros$)
@@ -27,9 +27,9 @@ import { map, take } from 'rxjs/operators';
         map( i => letras[i] ),
         take( letras.length )
     );
-    
+
     // Emite numeros del 1 al 5 cada segundo, pero tiene un delay inicial
-    // de 500 milésimas 
+    // de 500 milésimas
     const numeros$ = timer(500,1000).pipe(
         map( i => numeros[i] ),
         take( numeros.length )
@@ -39,12 +39,12 @@ import { map, take } from 'rxjs/operators';
     // Empezar a codificar aquí abajo
     // Nota, el subscribe debe de ser así
     // .subscribe( console.log )
-    // Es decir, la salida en el subscribe debe 
+    // Es decir, la salida en el subscribe debe
     // de estar procesada en su totalidad
     // ========================================
 
 
-
+    combineLatest()
 
 
 
@@ -53,4 +53,8 @@ import { map, take } from 'rxjs/operators';
 
 })();
 
-		
+// Combinar los ultimos valores emitidos por cada Observable
+// combineLatest(letras$, numeros$).pipe(
+//     // Transformar el arreglo de dos elementos a una cadena del tipo valObs1valObs2
+//     map(arr => arr.join(''))
+// ).subscribe(console.log)
